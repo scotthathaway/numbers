@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="personality,test,numbers">
+    <meta name="author" content="Karis Hathaway, Josh Hathaway">
+
+    <title>Numbers:  What's in a Name?</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Numbers:  What's in a Name?</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
+
+	  <div id='test' name='test' class="alert alert-warning alert-dismissible" role="alert">
+	    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	    Enter your information and click Go.
+	  </div>
+
+      <!-- Main component for a primary marketing message or call to action -->
+      <div class="well">
+		  <b>Name from Birth Certificate</b>
+	  	<table>
+	  		<tr>
+	  			<th><label>First Name</label></th>
+	  			<th><label>Middle Name</label></th>
+	  			<th><label>Last Name</label></th>
+	  			<th><label>Date of Birth (MM/DD/YYYY)</label></th>
+	  			<th>&nbsp;</th>
+	  		</tr>
+	  		<tr>
+	  			<td><input class="form-control" id='first_name' name='first_name' value='Scott'/></td>
+	  			<td><input class="form-control" id='middle_name' name='middle_name' value='Lawrence'/></td>
+	  			<td><input class="form-control" id='last_name' name='last_name' value='Hathaway'/></td>
+	  			<td><input class="form-control" id='birthday' name='birthday' value='02/06/1971'/></td>
+	  		</tr>
+	  	</table>
+	  	<br>
+	  	<b>Name You Go By</b>
+	  	<table>
+	  		<tr>
+	  			<th><label>First Name</label></th>
+	  			<th><label>Last Name</label></th>
+	  			<th>&nbsp;</th>
+	  		</tr>
+	  		<tr>
+	  			<td><input class="form-control" id='gb_first_name' name='gb_first_name' value='Scott'/></td>
+	  			<td><input class="form-control" id='gb_last_name' name='gb_last_name' value='Hathaway'/></td>
+	  			<td><button id='go' name='go' class="btn btn-sm btn-primary">Go</button></td>
+	  		</tr>
+	  	</table>
+      </div>
+	  <div class='panel-group' id='accordion' role='tablist' aria-multiselectable='true'></div>
+
+
+
+      <div id="survey" style="display:none;">
+          <b><p>Did you like your results?</p></b>
+          <div class="checkbox" id='yes_div'>
+            <label>
+              <input type="checkbox" value="" id='yes' checked>
+              Yes       <td><div id='ThumbsUp' name='ThumbsUp' class="glyphicon glyphicon-thumbs-up"></div></td>
+            </label>
+          </div>
+          <div class="checkbox" id="no_div">
+            <label>
+              <input type="checkbox" value="" id='no'>
+              No        <td><div id='ThumbsDown' name='ThumbsDown' class="glyphicon glyphicon-thumbs-down" style="display:none;"></div></td>
+            </label>
+          </div>
+      </div>
+      <br>
+      <br>
+      <br>
+
+
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src='numbers.js'></script>
+  </body>
+</html>

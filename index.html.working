@@ -1,0 +1,46 @@
+<html>
+<head>
+	<title>Numbers - What's In A Name?</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src='numbers.js'></script>
+</head>
+
+<body>
+	<h1>Numbers - What's In A Name?</h1>
+	<hr>
+	<b>Name from Birth Certificate</b>
+	<table>
+		<tr>
+			<th><label>First Name</label></th>
+			<th><label>Middle Name</label></th>
+			<th><label>Last Name</label></th>
+			<th><label>Date of Birth (MM/DD/YYYY)</label></th>
+			<th>&nbsp;</th>
+		</tr>
+		<tr>
+			<td><input id='first_name' name='first_name' value='Scott'/></td>
+			<td><input id='middle_name' name='middle_name' value='Lawrence'/></td>
+			<td><input id='last_name' name='last_name' value='Hathaway'/></td>
+			<td><input id='birthday' name='birthday' value='02/06/1971'/></td>
+		</tr>
+	</table>
+	<br>
+	<b>Name You Go By</b>
+	<table>
+		<tr>
+			<th><label>First Name</label></th>
+			<th><label>Last Name</label></th>
+			<th>&nbsp;</th>
+		</tr>
+		<tr>
+			<td><input id='gb_first_name' name='gb_first_name' value='Scott'/></td>
+			<td><input id='gb_last_name' name='gb_last_name' value='Hathaway'/></td>
+			<td><button id='go' name='go'>Go</button></td>
+		</tr>
+	</table>
+	<br>
+	<div id='results' name='results'></div>
+</body>
+
+
+</html>
