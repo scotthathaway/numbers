@@ -198,12 +198,12 @@ getNumberText = (title,num,info) ->
   	<div class='panel panel-default'>
     <div class='panel-heading' role='tab' id='heading#{heading_num}'>
       <h4 class='panel-title'>
-        <a role='button' data-toggle='collapse' data-parent='#accordion' href='#collapseOne' aria-expanded='true' aria-controls='collapseOne'>
+        <a role='button' data-toggle='collapse' data-parent='#accordion' href='#collapse#{heading_num}' aria-expanded='true' aria-controls='collapse#{heading_num}'>
           #{title}:  #{num} - #{info['title']}
         </a>
       </h4>
     </div>
-    <div id='collapseOne' class='panel-collapse collapse in' role='tabpanel' aria-labelledby='heading#{heading_num}'>
+    <div id='collapse#{heading_num}' class='panel-collapse collapse in' role='tabpanel' aria-labelledby='heading#{heading_num}'>
       <div class='panel-body'>
 		<big><b>#{title} = #{num} - #{info['title']}</b></big><br>
 		Meaning of the #{title}:  #{meaning}<br><br>
@@ -225,28 +225,13 @@ getNumberText = (title,num,info) ->
     </div>
 	</div>
 	"
-
 	return msg
 
-
-
 $ ->
-	$('#yes_div').click(()->
-		$('#yes').prop('checked',true)
-		$('#no').prop('checked',false)
-		console.log 'ThumbsUp'
-		$('#ThumbsUp').show(,true)
-		$('#ThumbsDown').show(,false)
-	)
-
-	$('#no_div').click(()->
-		$('#yes').prop('checked',false)
-		$('#no').prop('checked',true)
-		$('#ThumbsDown').show(,true)
-		$('#ThumbsUp').show(,false)
-	)
-
 	$('#go').click(()->
+		$('#ec').show()
+		$('#instructions').hide()
+
 		# Life Path (from the birthday)
 		month  = $('#birthday').val().substring(0,2)
 		day    = $('#birthday').val().substring(3,5)
@@ -363,4 +348,13 @@ $ ->
 
 		$('#survey').show()
 
+	)
+
+	$('#expandAll').click(()->
+		$('.collapse').collapse('show')
+	)
+
+	$('#collapseAll').click(()->
+		$('.collapse').collapse('hide')
+		$('.collapse.in').collapse('hide')
 	)

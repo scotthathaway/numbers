@@ -205,25 +205,15 @@ getNumberText = function(title, num, info) {
   var meaning, msg;
   heading_num++;
   meaning = meanings["" + title];
-  msg = "<div class='panel panel-default'> <div class='panel-heading' role='tab' id='heading" + heading_num + "'> <h4 class='panel-title'> <a role='button' data-toggle='collapse' data-parent='#accordion' href='#collapseOne' aria-expanded='true' aria-controls='collapseOne'> " + title + ":  " + num + " - " + info['title'] + " </a> </h4> </div> <div id='collapseOne' class='panel-collapse collapse in' role='tabpanel' aria-labelledby='heading" + heading_num + "'> <div class='panel-body'> <big><b>" + title + " = " + num + " - " + info['title'] + "</b></big><br> Meaning of the " + title + ":  " + meaning + "<br><br> <table> <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td><b>About</b></td></tr> <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>" + info['about'] + "</td></tr> <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td><br>&nbsp;</td></tr> <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td><b>Strengths</b></td></tr> <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>" + info['strengths'] + "</td></tr> <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td><br>&nbsp;</td></tr> <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td><b>Weaknesses</b></td></tr> <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>" + info['weaknesses'] + "</td></tr> <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td><br>&nbsp;</td></tr> <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td><b>Affirmation</b></td></tr> <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>" + info['affirmation'] + "</td></tr> <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td><br>&nbsp;</td></tr> </table> </div> </div> </div>";
+  msg = "<div class='panel panel-default'> <div class='panel-heading' role='tab' id='heading" + heading_num + "'> <h4 class='panel-title'> <a role='button' data-toggle='collapse' data-parent='#accordion' href='#collapse" + heading_num + "' aria-expanded='true' aria-controls='collapse" + heading_num + "'> " + title + ":  " + num + " - " + info['title'] + " </a> </h4> </div> <div id='collapse" + heading_num + "' class='panel-collapse collapse in' role='tabpanel' aria-labelledby='heading" + heading_num + "'> <div class='panel-body'> <big><b>" + title + " = " + num + " - " + info['title'] + "</b></big><br> Meaning of the " + title + ":  " + meaning + "<br><br> <table> <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td><b>About</b></td></tr> <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>" + info['about'] + "</td></tr> <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td><br>&nbsp;</td></tr> <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td><b>Strengths</b></td></tr> <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>" + info['strengths'] + "</td></tr> <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td><br>&nbsp;</td></tr> <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td><b>Weaknesses</b></td></tr> <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>" + info['weaknesses'] + "</td></tr> <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td><br>&nbsp;</td></tr> <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td><b>Affirmation</b></td></tr> <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>" + info['affirmation'] + "</td></tr> <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td><br>&nbsp;</td></tr> </table> </div> </div> </div>";
   return msg;
 };
 
 $(function() {
-  $('#yes_div').click(function() {
-    $('#yes').prop('checked', true);
-    $('#no').prop('checked', false);
-    $('#ThumbsDown').show(false);
-    return $('#ThumbsUp').show(true);
-  });
-  $('#no_div').click(function() {
-    $('#yes').prop('checked', false);
-    $('#no').prop('checked', true);
-    $('#ThumbsDown').show(true);
-    return $('#ThumbsUp').show(false);
-  });
-  return $('#go').click(function() {
+  $('#go').click(function() {
     var birthday_number, cornerstone_number, current_name_number, day, destiny_number, first_name, first_name_number, full_name, info, last_name, last_name_number, lesson_number, letter, life_path_number, maturity_number, middle_name, missing, month, msg, num, nums, personality_number, rday, rmonth, ryear, soul_number, temp, v, vc, year, _i, _len;
+    $('#ec').show();
+    $('#instructions').hide();
     month = $('#birthday').val().substring(0, 2);
     day = $('#birthday').val().substring(3, 5);
     year = $('#birthday').val().substring(6, 10);
@@ -308,5 +298,12 @@ $(function() {
     msg = msg + getNumberText("Cornerstone Number", cornerstone_number, info);
     $('#accordion').html(msg);
     return $('#survey').show();
+  });
+  $('#expandAll').click(function() {
+    return $('.collapse').collapse('show');
+  });
+  return $('#collapseAll').click(function() {
+    $('.collapse').collapse('hide');
+    return $('.collapse.in').collapse('hide');
   });
 });

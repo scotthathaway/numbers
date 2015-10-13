@@ -25,19 +25,12 @@
 
     <div class="container">
 
-      <!-- Static navbar -->
-      <nav class="navbar navbar-default">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="#">Numbers:  What's in a Name?</a>
-          </div>
-          <div id="navbar" class="navbar-collapse collapse">
-          </div><!--/.nav-collapse -->
-        </div><!--/.container-fluid -->
-      </nav>
+      <div class="well">
+        <b><big><big>Numbers:  What's in a Name?</big></big></b>
+      </div>
 
-	  <div id='test' name='test' class="alert alert-warning alert-dismissible" role="alert">
-	    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	  <div id='instructions' name='instructions' class="alert alert-warning alert-dismissible" role="alert">
+	    <button id='close_instructions' type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 	    Enter your information and click Go.
 	  </div>
 
@@ -74,30 +67,12 @@
 	  		</tr>
 	  	</table>
       </div>
-	  <div class='panel-group' id='accordion' role='tablist' aria-multiselectable='true'></div>
-
-
-
-      <div id="survey" style="display:none;">
-          <b><p>Did you like your results?</p></b>
-          <div class="checkbox" id='yes_div'>
-            <label>
-              <input type="checkbox" value="" id='yes' checked>
-              Yes       <td><div id='ThumbsUp' name='ThumbsUp' class="glyphicon glyphicon-thumbs-up"></div></td>
-            </label>
-          </div>
-          <div class="checkbox" id="no_div">
-            <label>
-              <input type="checkbox" value="" id='no'>
-              No        <td><div id='ThumbsDown' name='ThumbsDown' class="glyphicon glyphicon-thumbs-down" style="display:none;"></div></td>
-            </label>
-          </div>
-      </div>
+      <div id='ec' name='ec' align='right' style='display:none;'><button id='expandAll' name='expandAll' class='btn btn-sm btn-primary'>Expand All</button> <button id='collapseAll' name='collpaseAll' class='btn btn-sm btn-primary'>Collapse All</button></div>
+      <br>
+      <div class='panel-group' id='accordion' role='tablist' aria-multiselectable='true'></div>
       <br>
       <br>
       <br>
-
-
     </div> <!-- /container -->
 
 
